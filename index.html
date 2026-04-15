@@ -1,171 +1,191 @@
-<!DOCTYPE html <html Lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prontuário Eletrônico - Estrutura
-    </title>
-<!-- Bootstrap-->
+    <title>Prontuário Eletrônico - Estrutura</title>
+
+    <!--Bootstrap e icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!--Ícones-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <!-- Navbar-->
+
+    <!--navibar-->
     <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid justify-content-center">
             <span class="navbar-brand mb-0 h1">
-            <i class="bi bi-hospital"></i>Prontuário Eletrônico</span>
+                <i class="bi bi-hospital"></i> Prontuário Eletrônico</span>
         </div>
     </nav>
 
+    <!--1 sessao-->
     <div class="container mt-4">
         <form onsubmit="mostrarDados(); return false;">
 
-            <!-- Dados do Paciente -->
             <div class="card mb-4">
                 <div class="card-header bg-warning text-white text-center">
-                <i class="bi bi-person"></i>Dados do Paciente
+                    <i class="bi bi-person"></i> Dados do Paciente
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6 mb-3">                         
-                            <label for=" nome"> Nome</label>
-                            <input class="input-group form-control" type="text" name="nome" id="nome">
+                        <div class="col-md-6 mb-3">
+                            <label for="nome"> Nome</label>
+                            <input class="form-control" type="text" name="nome" id="nome">
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="idade"> Idade</label>
-                            <input class="input-group form-control" type="number" name="idade" id="idade">
+                            <input class="form-control" type="number" name="idade" id="idade">
                         </div>
-
                         <div class="col-md-3 mb-3">
                             <label for="sexo"> Sexo</label>
                             <select class="form-select" name="sexo" id="sexo">
-                                <option value="masculino">Masculino</option>
-                                <option value="feminino">Feminino</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Feminino">Feminino</option>
                             </select>
-                            
-                        </div>
-
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Sinais Vitais -->
-                <div class="card mb-4">
-                    <div class="card-header bg-info text-white text-center">
+            <!--2 sessao-->
+            <div class="card mb-4">
+                <div class="card-header bg-info text-white text-center">
                     <i class="bi bi-heart-pulse"></i> Sinais Vitais
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label for="pressao">
-                                <i class="bi bi-journal-text"></i> Pressao Arterial</label>
-                                <input class="input-group form-control" type="text" name="pressao" id="pressao" placeholder="Ex:120/80">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="temp"> Temperatura</label>
-                                <input class="input-group form-control" type="text" name="temp" id="nome" placeholder="Ex:36.5°C">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="cardiaca">
-                                <i class="bi bi-activity"></i> Frequência Cardíaca</label>
-                                <input class="input-group form-control" type="text" name="cardiaca" id="cardiaca">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="satura"> Saturação</label>
-                                <input class="input-group form-control" type="text" name="satura" id="satura" placeholder="%">
-                            </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="pressao"><i class="bi bi-journal-text"></i> Pressão Arterial</label>
+                            <input class="form-control" type="text" id="pressao" placeholder="Ex:120/80">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="temp"> Temperatura</label>
+                            <input class="form-control" type="text" id="temp" placeholder="Ex:36.5°C">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="cardiaca"><i class="bi bi-activity"></i> Frequência Cardíaca</label>
+                            <input class="form-control" type="text" id="cardiaca">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="satura"> Saturação</label>
+                            <input class="form-control" type="text" id="satura" placeholder="%">
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Evolução-->
-                <div class="card mb-4">
-                    <div class="card-header bg-info text-white text-center">
+            <!--3 sessao-->
+            <div class="card mb-4">
+                <div class="card-header bg-info text-white text-center">
                     <i class="bi bi-journal-text"></i> Evolução do Paciente
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="evo"> Descreva a evolução</label>
+                        <input class="form-control py-5" type="text" id="evo">
                     </div>
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="evo"> Descreva a evolução</label>
-                            <input class="input-group form-control py-5 input-group-lg" type="text" name="evo" id="evo">
-                        </div> 
-                    </div>
-                    </div>
+                </div>
+            </div>
 
-                    <!-- Medicação -->
-                    <div class="card mb-4">
-                        <div class="card-header bg-success text-white text-center">
-                        <i class="bi bi-capsule"></i> Medicação
+            <!--4 sessao-->
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white text-center">
+                    <i class="bi bi-capsule"></i> Medicação
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="medic"> Medicamento</label>
+                            <input class="form-control" type="text" id="medic">
                         </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="medic"> Medicamento</label>
-                                    <input class="input-group form-control" type="text" name="medic" id="medic">
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="dosagem"> Dosagem</label>
-                                    <input class="input-group form-control" type="text" name="dosagem" id="dosagem">
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="hora"> Horário</label>
-                                    <input class="input-group form-control" type="time" name="hora" id="hora">
-                                </div>
-                            </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="dosagem"> Dosagem</label>
+                            <input class="form-control" type="text" id="dosagem">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="hora"> Horário</label>
+                            <input class="form-control" type="time" id="hora">
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Botão -->
-                    <div class="text-end mb-5">
-                        <button class="btn btn-primary" type="submit">
-                        <i class="bi bi-save"></i> Salvar Prontuário
-                        </button>
-                    </div> 
-
-                        <div class="toast position-fixed bottom-0 end-0 p-3" id="toastSucesso">
-        <div class="toast-header">
-            <strong class="me-auto">sistema</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
-        </div>
-        <div class="toast-body">
-            Prontuário salvo com sucesso!
-        </div>
-    </div>
-
-
+            <!--botão-->
+            <div class="text-end mb-5">
+                <button class="btn btn-primary btn-lg shadow" type="submit">
+                    <i class="bi bi-save"></i> Salvar Prontuário
+                </button>
+            </div>
         </form>
+
+        <div id="resultado" class="mb-5 d-none"></div>
+
     </div>
 
-<script>
-    let resultado =`
-    <ul class="list-group">
-    <li class="list-group-item"><strong>Nome:</strong>${nome}</li>
-    <li class="list-group-item"><strong>Idade:</strong>${idade}</li>
-    <li class="list-group-item"><strong>Sexo:</strong>${sexo}</li>
-    <li class="list-group-item"><strong>Pressão:</strong>${pressao}</li>>
-    <li class="list-group-item"><strong>Temperatura:</strong>${temperatura}</li>
-    <li class="list-group-item"><strong>Frequência:</strong>${frequencia}</li>
-    <li class="list-group-item"><strong>Saturação:</strong>${saturacao}</li>
-    <li class="list-group-item"><strong>Evoleção:</strong>${evolucao}</li>
-    <li class="list-group-item"><strong>Medicamento:</strong>${medicamento}</li>
-    <li class="list-group-item"><strong>Dosagem:</strong>${dosagem}</li>
-    <li class="list-group-item"><strong>Horário:</strong>${horario}</li>   
-    </ul>
-    `;
-    
-    let caixa = document.getElementById("resultado");
-    caixa.innerHTML = resultado;
-    caixa.classList.remove("d-done");
+    <!--toast-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" id="toastSucesso">
+            <div class="toast-header">
+                <strong class="me-auto">Sistema</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                Prontuário salvo com sucesso!
+            </div>
+        </div>
+    </div>
 
-    let toast = new bootstrap.Toast(document.getElementById('toastSucesso'));
-    toast.show();
-</script>
-                       
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--pegando os dados dos inputs para mostrar -->
+    <script>
+       
+        function mostrarDados() {
+      
+            const nome = document.getElementById("nome").value;
+            const idade = document.getElementById("idade").value;
+            const sexo = document.getElementById("sexo").value;
+            const pressao = document.getElementById("pressao").value;
+            const temp = document.getElementById("temp").value;
+            const frequencia = document.getElementById("cardiaca").value;
+            const saturacao = document.getElementById("satura").value;
+            const evolucao = document.getElementById("evo").value;
+            const medicamento = document.getElementById("medic").value;
+            const dosagem = document.getElementById("dosagem").value;
+            const horario = document.getElementById("hora").value;
+
+            let resultadoHTML = `
+            <div class="alert alert-secondary">
+                <h4>Resumo do Prontuário:</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Nome:</strong> ${nome}</li>
+                    <li class="list-group-item"><strong>Idade:</strong> ${idade}</li>
+                    <li class="list-group-item"><strong>Sexo:</strong> ${sexo}</li>
+                    <li class="list-group-item"><strong>Pressão:</strong> ${pressao}</li>
+                    <li class="list-group-item"><strong>Temperatura:</strong> ${temp}</li>
+                    <li class="list-group-item"><strong>Frequência:</strong> ${frequencia}</li>
+                    <li class="list-group-item"><strong>Saturação:</strong> ${saturacao}</li>
+                    <li class="list-group-item"><strong>Evolução:</strong> ${evolucao}</li>
+                    <li class="list-group-item"><strong>Medicamento:</strong> ${medicamento}</li>
+                    <li class="list-group-item"><strong>Dosagem:</strong> ${dosagem}</li>
+                    <li class="list-group-item"><strong>Horário:</strong> ${horario}</li>   
+                </ul>
+            </div>
+            `;
+
+            let caixa = document.getElementById("resultado");
+            caixa.innerHTML = resultadoHTML;
+            caixa.classList.remove("d-none");
+
+            // Mostrar Toast
+            let toastEl = document.getElementById('toastSucesso');
+            let toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+    </script>
 </body>
 
 </html>
